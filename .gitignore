@@ -52,4 +52,6 @@ buildNumber.properties
 .idea
 .project
 *.iml
+.classpath
+.settings/
 # End of https://www.toptal.com/developers/gitignore/api/maven,java,vscode

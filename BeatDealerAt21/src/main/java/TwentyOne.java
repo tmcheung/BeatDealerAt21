@@ -38,12 +38,9 @@ public class TwentyOne {
     }
 
     public Player getWinner() {
-        if(!playerHasPlayed && !dealerHasPlayed){
-            System.out.println("Both players must play before declaring winner");
-            return null;
-        }
-
-        boolean playerWon = player.getHandScore() <= TwentyOneConstants.BLACKJACK && player.getHandScore() >= dealer.getHandScore();
+        int playerScore = player.getHandScore();
+        int dealerScore = dealer.getHandScore();
+        boolean playerWon = playerScore <= TwentyOneConstants.BLACKJACK && (playerScore >= dealerScore || dealerScore > TwentyOneConstants.BLACKJACK);
         if(playerWon)
             return player;
         return dealer;
