@@ -1,5 +1,4 @@
-package BeatDealerAt21.src.main.java.Card;
-
+package CardClasses;
 import java.util.HashMap;
 
 public enum Suit {

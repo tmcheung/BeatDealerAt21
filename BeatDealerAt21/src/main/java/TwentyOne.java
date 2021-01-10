@@ -1,10 +1,11 @@
-package BeatDealerAt21.src.main.java;
 import java.util.stream.Stream;
 
 public class TwentyOne {
     private final Deck deck;
     private final Dealer dealer;
     private final Player player;
+    private boolean playerHasPlayed = false;
+    private boolean dealerHasPlayed = false;
 
     public TwentyOne(Deck deck, Dealer dealer, Player player) {
         super();
@@ -22,14 +23,26 @@ public class TwentyOne {
 
     public void playersTurn(){
         while(player.draw(deck));
+        playerHasPlayed = true;
     }
 
     public void dealersTurn(){
+        if(!playerHasPlayed){
+            System.out.println("Player must play first");
+            return;
+        }
+
         dealer.setScoreToBeat(player.getHandScore());
         while(dealer.draw(deck));
+        dealerHasPlayed = true;
     }
 
     public Player getWinner() {
+        if(!playerHasPlayed && !dealerHasPlayed){
+            System.out.println("Both players must play before declaring winner");
+            return null;
+        }
+
         boolean playerWon = player.getHandScore() <= TwentyOneConstants.BLACKJACK && player.getHandScore() >= dealer.getHandScore();
         if(playerWon)
             return player;

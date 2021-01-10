@@ -1,6 +1,5 @@
-package BeatDealerAt21.src.main.java;
 import java.util.ArrayList;
-import BeatDealerAt21.src.main.java.Card.Card;
+import CardClasses.Card;
 
 public class Player {
 

@@ -1,10 +1,10 @@
-package BeatDealerAt21.src.main.java;
+import CardClasses.Card;
+import CardClasses.Rank;
+import CardClasses.Suit;
+
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Stack;
-import BeatDealerAt21.src.main.java.Card.Card;
-import BeatDealerAt21.src.main.java.Card.Rank;
-import BeatDealerAt21.src.main.java.Card.Suit;
 
 
 public class Deck {

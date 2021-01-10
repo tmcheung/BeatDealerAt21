@@ -48,4 +48,8 @@ buildNumber.properties
 !.vscode/extensions.json
 *.code-workspace
 .vscode/*
+.idea/*
+.idea
+.project
+*.iml
 # End of https://www.toptal.com/developers/gitignore/api/maven,java,vscode

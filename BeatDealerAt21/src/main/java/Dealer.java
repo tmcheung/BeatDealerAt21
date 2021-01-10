@@ -1,4 +1,3 @@
-package BeatDealerAt21.src.main.java;
 
 public class Dealer extends Player {
 

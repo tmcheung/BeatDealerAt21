@@ -1,4 +1,6 @@
-package BeatDealerAt21.src.main.java;
+import CardClasses.Card;
+import CardClasses.Rank;
+import CardClasses.Suit;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,17 +10,10 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-import BeatDealerAt21.src.main.java.Card.Card;
-import BeatDealerAt21.src.main.java.Card.Rank;
-import BeatDealerAt21.src.main.java.Card.Suit;
-
-public class App 
+public class App
 {
     public static void main( String[] args )
     {

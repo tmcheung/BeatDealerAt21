@@ -1,5 +1,4 @@
-package BeatDealerAt21.src.main.java.Card;
-
+package CardClasses;
 public class Card {
     private final Suit suit;
     private final Rank rank;
