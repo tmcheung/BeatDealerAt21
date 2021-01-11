@@ -6,9 +6,7 @@ import CardClasses.Rank;
 import CardClasses.Suit;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.experimental.theories.DataPoints;
 import org.junit.experimental.theories.Theories;
-import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
 
 import java.util.Stack;
@@ -92,33 +90,34 @@ public class TwentyOneTests
         assertFalse(game.hasInitialWinner());
     }
 
-    @Theory
-    public void player_should_draw_until_17_or_bust()
-    {
-//        Stack<Card> cards = new Stack<Card>();
-//        cards.add(new Card(Suit.Clubs, Rank.King));
-//        cards.add(new Card(Suit.Spades, Rank.King));
-//        cards.add(new Card(Suit.Diamonds, Rank.King));
-//        cards.add(new Card(Suit.Hearts, Rank.King));
-//        Deck deck = new Deck(cards);
-//        TwentyOne game = new TwentyOne(deck, dealer, player);
-//
-//        game.dealInitialHands();
-//        game.playersTurn();
-//
-//        assertFalse(game.hasInitialWinner());
-    }
+//    @Theory
+//    public void player_should_draw_until_17_or_bust()
+//    {
+//    }
 
-    @Test
-    public void dealer_should_draw_until_higher_or_bust()
-    {
-        assertTrue( true );
-    }
+//    @Theory
+//    public void dealer_should_draw_until_higher_or_bust()
+//    {
+//    }
 
     @Test
     public void dealer_should_win_if_player_bust()
     {
-        assertTrue( true );
+        Stack<Card> cards = new Stack<Card>();
+        cards.add(new Card(Suit.Hearts, Rank.Ten));
+        cards.add(new Card(Suit.Spades, Rank.Ten));
+        cards.add(new Card(Suit.Diamonds, Rank.Ten));
+        cards.add(new Card(Suit.Hearts, Rank.Ace));
+        cards.add(new Card(Suit.Clubs, Rank.Two));
+
+        Deck deck = new Deck(cards);
+        TwentyOne game = new TwentyOne(deck, dealer, player);
+
+        game.dealInitialHands();
+        game.playersTurn();
+        game.dealersTurn();
+
+        assertTrue(game.getWinner() == dealer);
     }
 
     @Test
@@ -131,8 +130,6 @@ public class TwentyOneTests
         cards.add(new Card(Suit.Hearts, Rank.Nine));
         cards.add(new Card(Suit.Clubs, Rank.Seven));
 
-
-
         Deck deck = new Deck(cards);
         TwentyOne game = new TwentyOne(deck, dealer, player);
 
@@ -141,29 +138,5 @@ public class TwentyOneTests
         game.dealersTurn();
 
         assertTrue(game.getWinner() == player);
-    }
-
-    @Test
-    public void player_should_win_if_dealer_has_less()
-    {
-        assertTrue( true );
-    }
-
-    @Test
-    public void game_should_only_have_two_turns()
-    {
-        assertTrue( true );
-    }
-
-    @Test
-    public void each_player_should_only_have_one_turn()
-    {
-        assertTrue( true );
-    }
-
-    @Test
-    public void player_should_play_first()
-    {
-        assertTrue( true );
     }
 }

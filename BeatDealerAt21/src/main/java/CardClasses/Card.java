@@ -29,4 +29,9 @@ public class Card {
         hash *= rank.hashCode() * prime;
         return hash;
     }
+
+    @Override
+    public boolean equals(Object o){
+        return hashCode() == o.hashCode();
+    }
 }
